@@ -1,0 +1,241 @@
+@charset "EUC-KR";
+
+@font-face {
+	font-family: "BM";
+	src: url("/web/font/BMDOHYEON_ttf.ttf")
+		format("truetype");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font-family: BM;
+}
+
+div#header {
+	background-image: url(/web/DeliveryImg/main_back4.png);
+	background-size: cover;
+}
+
+div#header_upper {
+	padding: 7px 0px;
+	overflow: hidden;
+}
+
+div#header_upper img {
+	float: left;
+	margin-left: 24px;
+	margin-top: 5px;
+	margin-bottom: -5px;
+	width: 144px;
+	height: 50px;
+}
+
+div#header_upper div {
+	float: right;
+	margin-top: 15px;
+	margin-right: 26px;
+}
+
+div#header_upper div a {
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+}
+
+div#header_upper div a:first-child {
+	margin-right: 30px;
+}
+
+div#header_bottom {
+	height: 306px;
+}
+
+div#header_bottom div:first-child {
+	width: 510px;
+	height: 93px;
+	margin: 0 auto;
+	color: white;
+	text-align: center;
+	margin-top: 30px;
+}
+
+div#header_bottom div:first-child p:first-child {
+	font-size: 30px;
+	font-weight: 900;
+	line-height: 2;
+}
+
+div#header_bottom div:first-child p:last-child {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 2;
+}
+
+div#headerInput {
+	width: 540px;
+	margin: 0 auto;
+	margin-top: 80px;
+}
+
+div#headerInput p {
+	color: white;
+	width: 225px;
+	margin: 0 auto;
+	font-size: 13px;
+	font-weight: 100;
+}
+
+div#headerInput input[type="text"] {
+	height: 54px;
+	box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.16);
+	background-color: #ffffff;
+	height: 54px;
+	border-radius: 40px;
+	color: #434343;
+	padding: 0px 170px 0px 70px;
+}
+
+div#headerInput input[type="button"] {
+	position: relative;
+	top: -54px;
+	left: 419px;
+	width: 144px;
+	height: 54px;
+	box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.23);
+	background-color: #f90346;
+	border-radius: 40px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+div#headerInput input {
+	border: none;
+	outline: none;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+div#nav {
+   background-image: linear-gradient(to right, #f90346, #ff3068);
+}
+
+div#nav ul {
+   overflow: hidden;
+   width: 896px;
+   margin: 0 auto;
+}
+
+div#nav ul li {
+   float: left;
+   list-style: none;
+   width: 128px;
+   font-size: 16px;
+   font-weight: 500;
+   line-height: 1.5;
+   padding: 20px 0px;
+   color: #ffffff;
+   text-align: center;
+   cursor: pointer;
+}
+
+div#nav ul li:hover {
+   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.24);
+   background-color: #ffffff;
+   color: #4f4f4f;
+}
+
+img#ticket-bg{
+	position: absolute;
+    top: 1337px;
+    z-index: -29;
+    
+}
+
+
+div.category {
+	margin: 100px 0 80px 0;
+}
+
+span.line_Left {
+	position: relative;
+	left: 270px;
+	top: 36px;
+	width: 15%;
+	border: 1px solid #000;
+	float: left;
+}
+
+span.line_Right {
+	position: relative;
+	width: 15%;
+	border: 1px solid #000;
+	float: right;
+	top: -40px;
+	right: 270px;
+}
+
+div.category h2 {
+	width: 22%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.coupon {
+	margin: 0px auto;
+}
+
+.coupon div {
+	float: left;
+
+}
+div.coupon-bk {
+	background-image: url(/web/DeliverImg/ticket-bg.svg);
+	display: block;
+}
+
+
+
+
+span.left {
+	top: 15px;
+}
+
+span.right {
+	top: -20px;
+}
+
+ul.bxslider {
+	width: 100%;
+	
+}
+
+div#coupon_bottom {
+	width: 420px;
+	margin: 0 auto;
+}
+
+div#coupon_bottom input[type="button"] {
+	width: 152px;
+	height: 54px;
+	border-radius: 40px;
+	box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.23);
+	border: solid 1px #f90346;
+	background-color: #ffffff;
+	outline-style: none;
+	color: #f90346;
+	font-weight: bold;
+	font-size: 24px;
+	cursor: pointer;
+}
+.down{
+	
+	
+}

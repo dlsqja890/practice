@@ -1,0 +1,69 @@
+@charset "EUC-KR";
+
+@font-face {
+   font-family: "BM";
+   src: url("/web/DeliveryProject/font/BMDOHYEON_ttf.ttf")
+      format("truetype");
+}
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+a {
+   text-decoration: none;
+}
+
+body {
+   font-family: BM;
+}
+
+div#footer {
+   width: 1093px;
+   margin: 0 auto;
+   padding:100px 0;
+}
+
+div#footer_F {
+   margint-top: 110px;
+   text-align: center;
+}
+
+div#footer_F div:first-child {
+   float: left;
+}
+
+div#footer_F div:first-child span {
+   vertical-align: super;
+}
+
+
+
+div#footer_F div#img {
+   float: right;
+   vertical-align: super;
+   margin-top: -3px;
+}
+
+div#footer_S {
+   margin-top: 14px;
+}
+
+div#footer_S img {
+   width: 25px;
+   vertical-align: bottom;
+
+}
+
+div#footer_T {
+   margin-top: 14px;
+}
+
+div#footer_T span:first-child {
+
+}
+
+div#footer_T img {
+   width: 90px;
+}

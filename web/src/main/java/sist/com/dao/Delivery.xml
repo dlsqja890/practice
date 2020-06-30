@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.com.model.CardBean">
+
+	<select id="menucate" parameterType="java.lang.String" resultType="sist.com.model.DeliCategory">
+	select*from store
+where ownerno=any(select ownerno from owner where ownermenucate=#{VALUE})
+	
+	</select>
+	
+	
+	
+	<select id="listzzim" parameterType="java.lang.String" resultType="sist.com.model.DeliCategory">
+	select*from store where ownerno=any(select storeno from zzimstore where USERID=#{userid})
+
+	
+	</select>
+	<select id="seachwholeval"  resultType="sist.com.model.DeliCategory">
+	select * from store
+
+	
+	
+	</select>
+	
+	<select id="seachval" parameterType="java.lang.String" resultType="sist.com.model.DeliCategory">
+	select * from store
+where storeaddr like '%'||#{value}||'%' 
+	
+	
+	</select>
+	
+	<select id="seachaddrval" parameterType="HashMap" resultType="sist.com.model.DeliCategory">
+	select * from store
+where storeaddr like '%'||#{addr}||'%' and ownerno=any(select ownerno from owner where ownermenucate=#{ownermenucate})
+	
+	
+	</select>
+	<select id="couponlist" resultType="sist.com.model.couponlist">
+	select storename,couponno,coupon.ownerno,couponname,sale
+from coupon,(select storename,ownerno from store where ownerno=any(select ownerno from coupon))store
+where coupon.ownerno=store.ownerno
+order by ownerno
+	
+	</select>
+	
+	
+	<select id="storeInfo" parameterType="java.lang.Integer" resultType="sist.com.model.DeliCategory">
+		select * from store
+		where ownerno=#{no}
+	</select>
+	
+	<select id="chicken" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select * from chicken
+		where ownerno=#{no}
+	</select>
+	<select id="pizza" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select * from pizza
+		where ownerno=#{no}
+	</select>
+	<select id="boonsik" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select * from boonsik
+		where ownerno=#{no}
+	</select>
+	<select id="China" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select * from China
+		where ownerno=#{no}
+	</select>
+	<select id="Korea" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select * from Korea
+		where ownerno=#{no}
+	</select>
+	<select id="Pig" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select * from Pig
+		where ownerno=#{no}
+	</select>
+	<select id="japan" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select * from japan
+		where ownerno=#{no}
+	</select>
+		<select id="chickenKind" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select distinct(MENUKIND) from chicken 
+		where ownerno=#{no}
+	</select>
+	
+	<select id="pizzaKind" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select distinct(MENUKIND) from pizza 
+		where ownerno=#{no}
+	</select>
+	
+	<select id="boonsikKind" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select distinct(MENUKIND) from boonsik 
+		where ownerno=#{no}
+	</select>
+	
+	<select id="ChinaKind" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select distinct(MENUKIND) from China 
+		where ownerno=#{no}
+	</select>
+	
+	<select id="KoreaKind" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select distinct(MENUKIND) from Korea 
+		where ownerno=#{no}
+	</select>
+	
+	<select id="PigKind" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select distinct(MENUKIND) from Pig 
+		where ownerno=#{no}
+	</select>
+	
+	<select id="japanKind" parameterType="java.lang.Integer" resultType="sist.com.model.DeliMenu">
+		select distinct(MENUKIND) from japan 
+		where ownerno=#{no}
+	</select>
+	
+	
+	
+	<insert id="insertMemberInfo" parameterType="sist.com.model.MemberBean">
+		<selectKey keyProperty="userno" order="BEFORE" resultType="int">
+			SELECT DELIJOIN_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO DELI_JOIN VALUES(#{userno},#{username},#{userid},#{userpw},#{usertel},null,null,'false')
+	</insert>
+	
+	<select id="selectMemberId" parameterType="sist.com.model.MemberBean" resultType="int">
+		SELECT USERNO FROM DELI_JOIN WHERE USERID=#{userid}
+	</select>
+	
+	<update id="updateConfirm" parameterType="int">
+		UPDATE DELI_JOIN SET CONFIRM='true' WHERE USERNO=#{NO}
+	</update>
+
+	<select id="idCheck" parameterType="String" resultType="String">
+		SELECT USERID FROM DELI_JOIN WHERE USERID=#{USERID}
+	</select>
+
+	<select id="loginProcess" parameterType="String" resultType="String">
+		SELECT USERPW FROM DELI_JOIN WHERE USERID=#{USERID}
+	</select>
+	
+	<select id="selectMemberName" parameterType="String" resultType="String">
+		SELECT USERNAME FROM DELI_JOIN WHERE USERID=#{USERID}
+	</select>
+	
+	<select id="confirmProcess" parameterType="String" resultType="String">
+		SELECT CONFIRM FROM DELI_JOIN WHERE USERID=#{USERID}
+	</select>
+	
+	
+	
+<!--           인범 (추가한것들)                        -->	
+	
+	<select id="couponboxinsert" parameterType="sist.com.model.couponbox" >
+		INSERT INTO DELI_COUPONBOX VALUES(#{couponno},#{userno},#{ownerno},'미사용')
+	</select>
+<select id="couponcheck" parameterType="java.lang.String" resultType="java.lang.Integer">
+	select couponno from deli_couponbox where userno=(select userno from deli_join where userid=#{userid})
+	</select>
+	
+	<!-- <select id="couponlist" parameterType="HashMap" resultType="List">
+	select storename, couponname,sale,startdate,enddate,usecoupon from coupon ,(select storename from store where ownerno=2)store,(select usecoupon from deli_couponbox where couponno=13)coupontbox where couponno=13
+	</select> -->
+	
+	<select id="mycouponlist" parameterType="java.lang.Integer" resultType="sist.com.model.mycouponlistbean">
+	
+	select c.couponno, c.ownerno, c.couponname, to_char(c.startdate,'yyyy-mm-dd')startdate, to_char(c.startdate,'yyyy-mm-dd')enddate, cb.userno, cb.usecoupon from coupon c, (select * from deli_couponbox where userno=#{userno})cb where c.couponno=cb.couponno
+	
+	</select>
+	
+	<select id="couponcount" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+	select couponcnt from coupon where couponno=#{value}
+	</select>
+	<select id="downcount" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+	select downcoupon from coupon where couponno=#{value}
+	</select>
+	<select id="mydetailinfo" parameterType="java.lang.String" resultType="sist.com.model.MemberBean">
+	
+		select userno,username,userid,userpw,usertel,usergender,userbirth from deli_join where userid=#{userid}
+	
+	</select>
+	<update id="infoupdate" parameterType="sist.com.model.MemberBean">
+	
+		UPDATE DELI_JOIN SET USERPW=#{userpw},USERTEL=#{usertel},USERGENDER=#{usergender},USERBIRTH=TO_DATE(#{userbirth},'yyyy/mm/dd') WHERE USERID=#{userid}
+	
+	</update>
+	<delete id="memberdelete" parameterType="java.lang.String">
+	delete from deli_join where userid=#{value}
+	
+	</delete>
+	<select id="mycouponcount" parameterType="java.lang.String" resultType="java.lang.Integer">
+	select count(*) from deli_couponbox where userno=#{value}
+	</select>
+	<delete id="deletezzim" parameterType="HashMap">
+	delete from zzimstore where storeno=#{ownerno} and userno=#{userno}
+	</delete>
+	<select id="zzimcompare" parameterType="HashMap" resultType="java.lang.Integer">
+	
+	select count(*) from zzimstore where userid=#{userid} and storeno=#{ownerno}
+	
+	</select>
+	<insert id="zziminsert" parameterType="sist.com.model.zzimbean" >
+	INSERT INTO ZZIMSTORE VALUES(#{storeno},#{userid},#{userno})		
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

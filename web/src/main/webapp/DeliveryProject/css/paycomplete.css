@@ -1,0 +1,179 @@
+
+/* clearfix */
+.clearfix {*zoom:1;}
+.clearfix:before, .clearfix:after {display: block; content: ''; line-height: 0;}
+.clearfix:after {clear: both;}
+div#container{
+	width:1093px;
+	margin:85px auto 0 auto;
+	box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.16);
+}
+
+div#container h1{
+	height:144px;
+	font-size:32px;
+	font-weight:bold;
+	color:#fff;
+	text-align:center;
+	line-height:144px;
+	background-image: linear-gradient(to right, #f90346, #ff3068);
+}
+
+div#payInfo{
+	margin:70px;
+}
+div#payInfo h2{
+	margin-bottom:66px;
+	text-align:center;
+	color:#434343;
+	font-size:30px;
+	font-weight:bold;
+}
+div#payInfo>div{
+	margin-bottom:40px;
+}
+div#payInfo div h3{
+	width:186px;
+	display:inline-block;
+	color:#434343;
+	font-size:24px;
+	font-weight:bold;
+}
+div#payInfo div p{
+	display:inline-block;
+	font-size:21px;
+	line-height:24px;
+	color: #9d9b9b;
+}
+div#payInfo div input[type=button]{
+	display:inline-block;
+	float:right;
+	width:168px;
+	height:36px;
+	border-radius: 40px;
+    border: solid 1px #f90346;
+    background-color: #ffffff;
+    color:#f90346;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+table#infoTable{
+	width:100%;
+	border-bottom:2px dotted #434343;
+}
+
+table#infoTable tr{
+	height:78px;
+	line-height:78px;
+}
+table#infoTable tr#head{
+	background-image: linear-gradient(to right, #f90346, #ff3068);
+}
+
+table#infoTable tr th{
+	text-align:center;
+	font-weight:bold;
+	font-size:16px;
+	color:#fff;
+}
+table#infoTable tr td{
+	text-align:center;
+	font-size:18px;
+	color:#434343;
+	font-weight:bold;
+	border-bottom:1px solid #d8d5d5;
+}
+
+table#infoTable tr td:first-child{
+	padding-left:63px;
+	text-align:left;
+	font-size:20px;
+}
+
+div#totalInfo{
+	padding:72px 118px;
+	font-size:20px;
+	color:#434343;
+}
+
+div#totalInfo div#left{
+	width:350px;
+	float:left;
+}
+
+div#totalInfo p{
+	display:inline-block;
+}
+
+div#totalInfo p:last-child{
+	float:right
+}
+
+div#totalInfo div#right{
+	width:376px;
+	float:right;
+}
+
+div#totalInfo div#left div{
+	margin-bottom:10px;
+}
+
+div#totalInfo div#left div#totalPrice{
+	margin-bottom:16px;
+	font-size:22px;
+	font-weight:bold;
+}
+
+div#totalInfo div#right{
+	font-size:24px;
+}
+
+div#totalInfo div#right h4{
+	margin-bottom:22px;
+	font-size:32px;
+	
+}
+
+div#totalInfo div#right div#totalPrice2{
+	color:#f90346;
+	font-weight:bold;
+	margin-bottom:17px;
+}
+
+div#totalInfo div#right div:last-child p:first-child{
+	font-weight:bold;
+}
+
+div#totalInfo div#right div:last-child p:last-child{
+	color: #9d9b9b;
+}
+
+input[type='button']#lastbtn{
+	width:168px;
+	height:40px;
+	line-height:40px;
+	color:#f90346;
+	border-radius: 40px;
+    border: solid 1px #f90346;
+    background-color: #ffffff;
+	margin:48px auto;
+	display:block;
+	cursor:pointer;
+}
+
+div#upButton{
+	width:56px;
+	height:40px;
+	padding-top:16px;
+	border-radius:40px;
+	background-color:#f90346;
+	position: fixed;
+    top: 590px;
+    right:70px;
+    pointer:cursor;
+}
+div#upButton img{
+	display:block;
+	margin:0 auto;
+}

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.com.model.CardBean">
+
+	<insert id="insertCard" parameterType="card">
+		<selectKey keyProperty="no" order="BEFORE" resultType="int">
+			SELECT CARD_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO CARD VALUES(#{no},#{companyName},#{name},#{tel},
+		#{dept},#{addr},#{face},#{email},0,#{message},SYSDATE)
+	</insert>
+
+	<select id="selectCard" resultType="card" parameterType="HashMap">
+		<!-- SELECT NO,COMPANYNAME,NAME,TEL,DEPT,ADDR,FACE,EMAIL,HIT,MESSAGE, TO_CHAR(REGDATE,'YYYY/MM/DD')REGDATE 
+			FROM CARD <if test="query!=null"> WHERE ${query} LIKE '%'||#{data}||'%' </if> 
+			ORDER BY NO DESC -->
+		SELECT RM,NO,COMPANYNAME,NAME,TEL,DEPT,ADDR,
+		FACE,EMAIL,HIT,MESSAGE,REGDATE
+		FROM(
+		SELECT ROWNUM RM,NO,COMPANYNAME,NAME,TEL,DEPT,ADDR,
+		FACE,EMAIL,HIT,MESSAGE,REGDATE
+		FROM(
+		SELECT NO,COMPANYNAME,NAME,TEL,DEPT,ADDR,
+		FACE,EMAIL,HIT,MESSAGE,REGDATE		
+		FROM CARD  
+		 <if test="query!=null">
+		WHERE ${query} LIKE '%'||#{data}||'%'
+		</if>		
+       ))
+		WHERE RM BETWEEN #{start} AND #{end}   
+
+
+	</select>
+	<select id="getTotalRowCard" resultType="java.lang.Integer">
+	   SELECT COUNT(*) FROM CARD
+	</select>
+
+	<update id="updateHitCard" parameterType="int">
+		UPDATE CARD SET HIT=HIT+1
+		WHERE NO=#{VALUE}
+	</update>
+	<select id="selectInfo" parameterType="int" resultType="card">
+		SELECT NO,COMPANYNAME,NAME,TEL,DEPT,ADDR,FACE,EMAIL,HIT,MESSAGE,
+		TO_CHAR(REGDATE,'YYYY/MM/DD')REGDATE
+		FROM CARD
+		WHERE NO=#{VALUE}
+	</select>
+
+	<delete id="deleteCard" parameterType="int">
+		DELETE FROM CARD
+		WHERE NO=#{VALUE}
+	</delete>
+	<update id="upTrans" parameterType="int">
+		UPDATE CARD2 SET NAME='TESTNAME'
+		WHERE NO=#{VALUE}
+	</update>
+	<select id="replygetSequence" resultType="java.lang.Integer">
+	   SELECT REPLY_SEQ.NEXTVAL FROM DUAL
+	</select>
+ 
+	<insert id="replyInsertCard" parameterType="sist.com.model.ReplyBean">
+	   INSERT INTO REPLY VALUES(#{no},#{contents},
+	   #{id},#{step},#{ref},#{pnum},0,#{img},sysdate,#{infoPk})	
+	</insert>
+	<select id="selectReply" parameterType="int" 
+	                resultType="sist.com.model.ReplyBean">
+	  SELECT NO,CONTENTS,ID,STEP,REF,PNUM,REPLY,IMG,REGDATE
+	  FROM REPLY
+	  WHERE INFOPK=#{VALUE}	
+	  ORDER BY REF DESC,PNUM ASC,NO  
+	</select>
+	<insert id="ajaxInsert" parameterType="sist.com.model.AjaxBean">
+	  INSERT INTO TESTAJAX VALUES(TESTAJAX_SEQ.NEXTVAL,#{subject},#{score},sysdate)
+	</insert>
+	
+	<select id="ajaxList" resultType="sist.com.model.AjaxBean">
+	  SELECT * FROM TESTAJAX
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

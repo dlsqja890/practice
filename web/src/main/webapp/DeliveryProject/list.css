@@ -1,0 +1,194 @@
+@charset "EUC-KR";
+* {
+	margin: 0;
+	padding: 0;
+}
+.listmain{
+box-shadow: 0 2px 50px 0 rgba(151, 151, 151, 0.23);
+   margin-top: 10px;
+    position:relative;
+     background-color: white;
+    width: 1318px;
+ height:auto;  
+    overflow: hidden;
+margin: 0 auto;
+}
+.show:hover{
+	
+	cursor: pointer;
+}
+.spanmenu:hover{
+
+background-color: white;
+color: black;
+
+}
+
+.spanmenu{
+
+ background-color: #FF3068;
+width:436px;
+height:60px;
+ color: white;
+ border-top-right-radius: 40px;
+ border-top-left-radius:40px;
+display: block;
+text-align: center;
+float: left;
+line-height: 60px;
+font-size: 14px;
+cursor: pointer;
+margin-left: 5px;
+position: relative;
+}
+span#span1{
+	  margin: 0 auto;
+
+}
+span#span2{
+
+}
+div#foodshopimg{
+border: 1px solid black ;
+ width: 250px; 
+ height: 250px; 
+ position: relative;
+  top: 35px;
+   left: 35px;
+    border-radius: 17px;
+}
+.foodzzim{
+ position: relative;
+	
+	    top: -204px;
+    left: 244px;
+width: 30px; 
+height: 30px;
+background-color: white;
+
+}
+div#brandborder{
+width: 100px ;  
+height:40px;  
+top: -242px;
+    left: 26%;
+  position: relative;
+
+}
+p#brandname{
+width:200px;
+font-weight: bold; 
+font-size: 28px;
+ position: relative; 
+ color: #434343 ;
+
+}
+p#brandloc{
+	width:300px;
+font-weight: bold;
+ font-size: 15px; 
+ left: 5px ; 
+ top: -19px;
+ position: relative;  
+ color: #434343 ;
+}
+div#starborder{
+width: 236px; 
+height: 114px; 
+  position: relative; 
+  top:-285px;
+   left: 1025px;
+
+}
+p#starscore{
+color: #434343; 
+font-size: 28px;
+ position: relative;
+  float: right; 
+  top: 5px;
+
+}
+p#foodtypename{
+font-weight: bold; 
+font-family: 안상수2006중간 ;
+ font-size: 20px;
+  color: #898989;
+      left: 935px;
+      top: -519px;
+          position: relative;
+
+}
+p#foodtel{
+font-weight: bold;  
+font-family: 안상수2006중간 ; 
+margin-top: 21px; 
+font-size: 25px; 
+margin-left: 46px; 
+ color: #898989;
+
+}
+p#reviewcount{
+	font-size: 15px;
+	 color:#F90346 ;
+	  font-weight: bold;  
+	    margin-bottom: 14px;
+	
+	
+	
+}
+div#foodtypeborder{
+
+width: 221px; 
+height: 105px; 
+ left: 25%;
+  position: relative; 
+     top: -260px;
+
+}
+div#reviewborder{
+left: 991px;
+width: 287px;
+ height: 100px;
+  position: relative;
+   top: -406px;
+      
+
+}
+span#reviewshow{
+font-weight: bold;
+ font-size: 13px  ;
+  border: 0.8px solid #F90346;
+  color: #F90346; 
+   border-radius:50px;
+    width: 160px;
+    height: 35px;
+    display: block; 
+    text-align: center ;
+     position: relative; 
+     margin-left: 110px; 
+     top: -42px;
+      line-height: 34px; 
+
+}
+.onClick{
+	background-color: white;
+	color: black;
+}
+span.menushow{
+font-weight: bold;
+ background-color:#F90346;
+  font-size: 13px  ;
+  color:white; 
+   border-radius:50px; 
+   width: 160px;
+   height: 35px;
+   display: block; 
+   text-align: center ;
+    position: relative; 
+    margin-left: 110px; 
+    top: -54px;
+     line-height: 34px; 
+
+}
+
+

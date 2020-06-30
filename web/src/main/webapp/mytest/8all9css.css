@@ -1,0 +1,23 @@
+@CHARSET "EUC-KR";
+
+.header{
+width: 100% ;
+height: 70px;
+
+}
+.header2 {
+margin: 0 auto ;
+width: 1000px;
+height: 70px;
+border: 1px solid black;
+display: table;
+}
+.headerspan{
+cursor:pointer;
+color:white;
+background: #91C501;
+display: table-cell;
+text-align: center;
+vertical-align: middle;
+
+}
